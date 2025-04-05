@@ -49,6 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChiTietChuyenDi.Designer.cs">
+      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChuyenDi.Designer.cs">
+      <DependentUpon>ChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhGiaChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhGiaChuyenDi.Designer.cs">
+      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatChuyenDi.Designer.cs">
+      <DependentUpon>DatChuyenDi.cs</DependentUpon>
+    </Compile>
     <Compile Include="fUserControl\AdminDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +108,12 @@
     </Compile>
     <Compile Include="fUserControl\GuideManage.Designer.cs">
       <DependentUpon>GuideManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhieuNguoiDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NhieuNguoiDi.Designer.cs">
+      <DependentUpon>NhieuNguoiDi.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +153,30 @@
     <Compile Include="fUserControl\TourManage.Designer.cs">
       <DependentUpon>TourManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaoChuyenDiMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaoChuyenDiMoi.Designer.cs">
+      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChiTietChuyenDi.resx">
+      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChuyenDi.resx">
+      <DependentUpon>ChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhGiaChuyenDi.resx">
+      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatChuyenDi.resx">
+      <DependentUpon>DatChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fUserControl\GuideManage.resx">
       <DependentUpon>GuideManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhieuNguoiDi.resx">
+      <DependentUpon>NhieuNguoiDi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fUserControl\TourManage.resx">
       <DependentUpon>TourManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoChuyenDiMoi.resx">
+      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -237,6 +300,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Show.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hình nền.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

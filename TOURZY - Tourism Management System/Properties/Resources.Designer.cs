@@ -83,6 +83,16 @@ namespace TOURZY___Tourism_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hình_nền {
+            get {
+                object obj = ResourceManager.GetObject("Hình nền", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Homepage {
             get {
                 object obj = ResourceManager.GetObject("Homepage", resourceCulture);
