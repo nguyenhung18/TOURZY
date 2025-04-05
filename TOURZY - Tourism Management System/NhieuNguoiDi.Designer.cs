@@ -32,11 +32,14 @@
             System.Windows.Forms.Panel panel4;
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.dtgv_DanhSachNguoiDi = new System.Windows.Forms.DataGridView();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -46,16 +49,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tb_HoVaTen = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cccd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             panel1 = new System.Windows.Forms.Panel();
             panel4 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DanhSachNguoiDi)).BeginInit();
-            panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,26 +90,37 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ĐẶT CHUYẾN ĐI SỐ LƯỢNG NHIỀU\r\n";
             // 
-            // label2
+            // panel4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(154, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1054, 68);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ĐẶT CHUYẾN ĐI SỐ LƯỢNG NHIỀU";
+            panel4.BackColor = System.Drawing.SystemColors.Window;
+            panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel4.Controls.Add(this.panel2);
+            panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
+            panel4.Location = new System.Drawing.Point(1, 1);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(1421, 141);
+            panel4.TabIndex = 96;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(14, 0);
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1422, 115);
+            this.panel2.Size = new System.Drawing.Size(1417, 115);
             this.panel2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(166, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1054, 68);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ĐẶT CHUYẾN ĐI SỐ LƯỢNG NHIỀU";
             // 
             // btn_QuayLai
             // 
@@ -157,6 +168,33 @@
             this.dtgv_DanhSachNguoiDi.RowTemplate.Height = 24;
             this.dtgv_DanhSachNguoiDi.Size = new System.Drawing.Size(1252, 242);
             this.dtgv_DanhSachNguoiDi.TabIndex = 106;
+            // 
+            // HoTen
+            // 
+            this.HoTen.FillWeight = 200F;
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
+            this.HoTen.Width = 300;
+            // 
+            // SDT
+            // 
+            this.SDT.FillWeight = 200F;
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 300;
+            // 
+            // cccd
+            // 
+            this.cccd.FillWeight = 200F;
+            this.cccd.HeaderText = "CCCD";
+            this.cccd.MinimumWidth = 6;
+            this.cccd.Name = "cccd";
+            this.cccd.ReadOnly = true;
+            this.cccd.Width = 300;
             // 
             // btn_Sua
             // 
@@ -226,6 +264,7 @@
             this.tb_SDT.Name = "tb_SDT";
             this.tb_SDT.Size = new System.Drawing.Size(226, 34);
             this.tb_SDT.TabIndex = 100;
+            this.tb_SDT.TextChanged += new System.EventHandler(this.tb_SDT_TextChanged);
             // 
             // label4
             // 
@@ -260,44 +299,6 @@
             this.label11.TabIndex = 97;
             this.label11.Text = "Họ và Tên: ";
             // 
-            // panel4
-            // 
-            panel4.BackColor = System.Drawing.SystemColors.Window;
-            panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel4.Controls.Add(this.panel2);
-            panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
-            panel4.Location = new System.Drawing.Point(-12, 1);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(1453, 141);
-            panel4.TabIndex = 96;
-            // 
-            // HoTen
-            // 
-            this.HoTen.FillWeight = 200F;
-            this.HoTen.HeaderText = "Họ và tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 300;
-            // 
-            // SDT
-            // 
-            this.SDT.FillWeight = 200F;
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 300;
-            // 
-            // cccd
-            // 
-            this.cccd.FillWeight = 200F;
-            this.cccd.HeaderText = "CCCD";
-            this.cccd.MinimumWidth = 6;
-            this.cccd.Name = "cccd";
-            this.cccd.ReadOnly = true;
-            this.cccd.Width = 300;
-            // 
             // NhieuNguoiDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,14 +320,15 @@
             this.Controls.Add(panel4);
             this.Controls.Add(panel1);
             this.Name = "NhieuNguoiDi";
-            this.Size = new System.Drawing.Size(1428, 726);
+            this.Size = new System.Drawing.Size(1422, 726);
+            this.Load += new System.EventHandler(this.NhieuNguoiDi_Load);
             panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_DanhSachNguoiDi)).EndInit();
-            panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

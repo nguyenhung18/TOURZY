@@ -77,7 +77,7 @@
             panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1432, 141);
+            panel1.Size = new System.Drawing.Size(1424, 141);
             panel1.TabIndex = 36;
             // 
             // panel3
@@ -87,7 +87,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1453, 115);
+            this.panel3.Size = new System.Drawing.Size(1423, 115);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(213, 14);
+            this.label1.Location = new System.Drawing.Point(201, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(991, 90);
             this.label1.TabIndex = 0;
@@ -458,7 +458,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(panel1);
             this.Name = "ChiTietChuyenDi";
-            this.Size = new System.Drawing.Size(1428, 726);
+            this.Size = new System.Drawing.Size(1422, 726);
             panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

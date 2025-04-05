@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel panel1;
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tb_DiemDen = new System.Windows.Forms.TextBox();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_GuiYeuCau = new System.Windows.Forms.Button();
@@ -37,12 +39,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.SystemColors.Window;
+            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel1.Controls.Add(this.panel3);
+            panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(1422, 141);
+            panel1.TabIndex = 119;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1421, 115);
+            this.panel3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(199, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1011, 68);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TẠO CHUYẾN ĐI THEO SỞ THÍCH";
             // 
             // tb_DiemDen
             // 
@@ -52,6 +84,7 @@
             this.tb_DiemDen.Name = "tb_DiemDen";
             this.tb_DiemDen.Size = new System.Drawing.Size(348, 42);
             this.tb_DiemDen.TabIndex = 114;
+            this.tb_DiemDen.TextChanged += new System.EventHandler(this.tb_DiemDen_TextChanged);
             // 
             // btn_QuayLai
             // 
@@ -133,38 +166,6 @@
             this.label12.Text = "Ngày khởi hành:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel1
-            // 
-            panel1.BackColor = System.Drawing.SystemColors.Window;
-            panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel1.Controls.Add(this.panel3);
-            panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
-            panel1.Location = new System.Drawing.Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1432, 141);
-            panel1.TabIndex = 119;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1453, 115);
-            this.panel3.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(160, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1011, 68);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TẠO CHUYẾN ĐI THEO SỞ THÍCH";
-            // 
             // TaoChuyenDiMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,7 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
             this.Name = "TaoChuyenDiMoi";
-            this.Size = new System.Drawing.Size(1428, 726);
+            this.Size = new System.Drawing.Size(1422, 726);
             panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

@@ -16,5 +16,10 @@ namespace TOURZY___Tourism_Management_System
         {
             InitializeComponent();
         }
+
+        private void tb_DiemDen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

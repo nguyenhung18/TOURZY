@@ -16,5 +16,15 @@ namespace TOURZY___Tourism_Management_System
         {
             InitializeComponent();
         }
+
+        private void NhieuNguoiDi_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_SDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

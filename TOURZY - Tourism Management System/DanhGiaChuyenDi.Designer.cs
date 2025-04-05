@@ -56,8 +56,9 @@
             panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(148)))), ((int)(((byte)(223)))));
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1428, 141);
+            panel1.Size = new System.Drawing.Size(1422, 141);
             panel1.TabIndex = 6;
+            panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -66,7 +67,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1428, 105);
+            this.panel2.Size = new System.Drawing.Size(1422, 105);
             this.panel2.TabIndex = 2;
             // 
             // label2
@@ -74,11 +75,12 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(418, 27);
+            this.label2.Location = new System.Drawing.Point(372, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(702, 68);
             this.label2.TabIndex = 0;
             this.label2.Text = "ĐÁNH GIÁ CHUYẾN ĐI ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel3
             // 
@@ -152,6 +154,7 @@
             this.rtb_NhanXet.Size = new System.Drawing.Size(694, 134);
             this.rtb_NhanXet.TabIndex = 4;
             this.rtb_NhanXet.Text = "";
+            this.rtb_NhanXet.TextChanged += new System.EventHandler(this.rtb_NhanXet_TextChanged);
             // 
             // label3
             // 
@@ -208,7 +211,7 @@
             this.Controls.Add(panel1);
             this.Controls.Add(this.panel3);
             this.Name = "DanhGiaChuyenDi";
-            this.Size = new System.Drawing.Size(1428, 726);
+            this.Size = new System.Drawing.Size(1422, 726);
             panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

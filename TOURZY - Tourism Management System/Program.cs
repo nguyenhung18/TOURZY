@@ -16,7 +16,12 @@ namespace TOURZY___Tourism_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new User());
+            fLogin loginForm = new fLogin();
+            if (loginForm.ShowDialog() == DialogResult.OK)  
+            {
+                Application.Run(new User());
+            }
+           
         }
     }
 }
