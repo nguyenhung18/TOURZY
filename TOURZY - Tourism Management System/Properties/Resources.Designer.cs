@@ -63,6 +63,16 @@ namespace TOURZY___Tourism_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_15_58_10_8_thg_4__2025 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 15_58_10 8 thg 4, 2025", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap financial_statement {
             get {
                 object obj = ResourceManager.GetObject("financial-statement", resourceCulture);

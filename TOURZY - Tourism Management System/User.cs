@@ -25,43 +25,6 @@ namespace TOURZY___Tourism_Management_System
            // Đặt giá trị username lên label
             string username = fLogin.username.Substring(0, 1).ToUpper() + fLogin.username.Substring(1);
             lblTen.Text = username;
-            // Kiểm tra tên để xác định giới tính
-            if (IsFemale(username))
-            {
-                // Hiển thị hình ảnh nữ
-                pbAva.Image = Image.FromFile("C:\\Users\\ADMIN\\Pictures\\female.png");
-            }
-            else if (IsMale(username))
-            {
-                // Hiển thị hình ảnh nam
-                pbAva.Image = Image.FromFile("C:\\Users\\ADMIN\\Pictures\\male.png");
-            }
-            else
-            {
-                // Nếu không xác định được giới tính, có thể để hình ảnh mặc định
-                pbAva.Image = null;
-            }
-        }
-        // Quy tắc xác định giới tính nữ dựa vào tên
-        private bool IsFemale(string username)
-        {
-            // Dùng quy tắc đơn giản kiểm tra âm cuối tên
-            return username.EndsWith("Nguyệt", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Mai", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Lan", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Thảo", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Phương", StringComparison.OrdinalIgnoreCase);
-        }
-
-        // Quy tắc xác định giới tính nam dựa vào tên
-        private bool IsMale(string username)
-        {
-            // Dùng quy tắc đơn giản kiểm tra âm cuối tên
-            return username.EndsWith("Nam", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Vinh", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Hùng", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Duy", StringComparison.OrdinalIgnoreCase) ||
-                   username.EndsWith("Khoa", StringComparison.OrdinalIgnoreCase);
         }
         private void btn_X_Click(object sender, EventArgs e)
         {
@@ -76,21 +39,30 @@ namespace TOURZY___Tourism_Management_System
         }
         private void btn_DangXuat_Click_1(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show(
+            "Bạn có chắc chắn muốn đăng xuất không?",
+            "Xác nhận đăng xuất",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+ );
 
-            this.Hide(); // Ẩn UserForm (không đóng)
-
-            fLogin loginForm = new fLogin();
-
-            // Dùng ShowDialog để chờ người dùng đăng nhập lại
-            if (loginForm.ShowDialog() == DialogResult.OK)
+            if (result == DialogResult.Yes)
             {
-                this.Show(); // Đăng nhập lại thành công -> hiện UserForm lại
-            }
-            else
-            {
-                this.Close(); // Nếu người dùng thoát luôn -> đóng app
-            }
+                this.Hide(); // Ẩn UserForm (không đóng)
 
+                fLogin loginForm = new fLogin();
+
+                // Dùng ShowDialog để chờ người dùng đăng nhập lại
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    this.Show(); // Đăng nhập lại thành công -> hiện UserForm lại
+                }
+                else
+                {
+                    this.Close(); // Nếu người dùng thoát luôn -> đóng app
+                }
+
+            }
         }
 
         private void btn_TimChuyenDi_Click(object sender, EventArgs e)
@@ -152,6 +124,11 @@ namespace TOURZY___Tourism_Management_System
             taoChuyenDiMoi1.Visible = false;
             nhieuNguoiDi1.Visible = false;
             danhGiaChuyenDi1.Visible = true;
+        }
+
+        private void lblTen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

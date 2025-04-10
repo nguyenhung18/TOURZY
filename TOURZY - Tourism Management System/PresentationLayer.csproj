@@ -304,5 +304,8 @@
   <ItemGroup>
     <None Include="Resources\Hình nền.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 15_58_10 8 thg 4, 2025.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
