@@ -14,7 +14,7 @@ namespace TOURZY___Tourism_Management_System
 {
     public partial class fSignin : Form
     {
-        private string connectionString = @"Data Source=.;Initial Catalog=Tourzy;Integrated Security=True";
+        private string connectionString = @"Data Source=.;Initial Catalog=Tourzy;Integrated Security=True;";
         public fSignin()
         {
             InitializeComponent();
@@ -57,7 +57,7 @@ namespace TOURZY___Tourism_Management_System
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
             string confirmPassword = txtConfirm.Text.Trim();
-            }
+            
         }
     }
 }

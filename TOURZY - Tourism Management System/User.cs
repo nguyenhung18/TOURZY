@@ -18,7 +18,9 @@ namespace TOURZY___Tourism_Management_System
         {
             InitializeComponent();
             displayUsername();
+           
         }
+       
         public void displayUsername()
         {
             
@@ -124,11 +126,6 @@ namespace TOURZY___Tourism_Management_System
             taoChuyenDiMoi1.Visible = false;
             nhieuNguoiDi1.Visible = false;
             danhGiaChuyenDi1.Visible = true;
-        }
-
-        private void lblTen_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

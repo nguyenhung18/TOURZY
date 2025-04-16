@@ -19,7 +19,7 @@ namespace TOURZY___Tourism_Management_System
         public static string username;
 
         // Chuỗi kết nối đến cơ sở dữ liệu Tourzy (dùng chuỗi bạn cung cấp)
-        private string connectionString = @"Data Source=.;Initial Catalog=Tourzy;Integrated Security=True";
+        private string connectionString = @"Data Source=.;Initial Catalog=Tourzy;Integrated Security=True;";
 
         public fLogin()
         {

@@ -41,20 +41,20 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbAva = new SATAUiFramework.Controls.SATAPictureBox();
             this.btn_X = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.danhGiaChuyenDi1 = new TOURZY___Tourism_Management_System.DanhGiaChuyenDi();
             this.chuyenDi1 = new TOURZY___Tourism_Management_System.ChuyenDi();
             this.chiTietChuyenDi1 = new TOURZY___Tourism_Management_System.ChiTietChuyenDi();
             this.datChuyenDi1 = new TOURZY___Tourism_Management_System.DatChuyenDi();
             this.taoChuyenDiMoi1 = new TOURZY___Tourism_Management_System.TaoChuyenDiMoi();
             this.nhieuNguoiDi1 = new TOURZY___Tourism_Management_System.NhieuNguoiDi();
-            this.pbAva = new SATAUiFramework.Controls.SATAPictureBox();
+            this.danhGiaChuyenDi1 = new TOURZY___Tourism_Management_System.DanhGiaChuyenDi();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAva)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAva)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +79,6 @@
             this.lblTen.Size = new System.Drawing.Size(77, 27);
             this.lblTen.TabIndex = 8;
             this.lblTen.Text = " (Tên )";
-            this.lblTen.Click += new System.EventHandler(this.lblTen_Click);
             // 
             // btn_TimChuyenDi
             // 
@@ -241,6 +240,24 @@
             this.label2.TabIndex = 20;
             this.label2.Text = " Xin Chào, ";
             // 
+            // pbAva
+            // 
+            this.pbAva.BackColor = System.Drawing.Color.White;
+            this.pbAva.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pbAva.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pbAva.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pbAva.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pbAva.BorderSize = 1;
+            this.pbAva.GradientAngle = 50F;
+            this.pbAva.Image = global::TOURZY___Tourism_Management_System.Properties.Resources.ChatGPT_Image_15_58_10_8_thg_4__2025;
+            this.pbAva.Location = new System.Drawing.Point(75, 25);
+            this.pbAva.Margin = new System.Windows.Forms.Padding(4);
+            this.pbAva.Name = "pbAva";
+            this.pbAva.Size = new System.Drawing.Size(128, 128);
+            this.pbAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAva.TabIndex = 9;
+            this.pbAva.TabStop = false;
+            // 
             // btn_X
             // 
             this.btn_X.BackColor = System.Drawing.Color.Firebrick;
@@ -284,14 +301,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1422, 726);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // danhGiaChuyenDi1
-            // 
-            this.danhGiaChuyenDi1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.danhGiaChuyenDi1.Location = new System.Drawing.Point(3, 3661);
-            this.danhGiaChuyenDi1.Name = "danhGiaChuyenDi1";
-            this.danhGiaChuyenDi1.Size = new System.Drawing.Size(1442, 726);
-            this.danhGiaChuyenDi1.TabIndex = 5;
-            // 
             // chuyenDi1
             // 
             this.chuyenDi1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chuyenDi1.BackgroundImage")));
@@ -300,7 +309,7 @@
             this.chuyenDi1.Location = new System.Drawing.Point(3, 2);
             this.chuyenDi1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chuyenDi1.Name = "chuyenDi1";
-            this.chuyenDi1.Size = new System.Drawing.Size(1442, 726);
+            this.chuyenDi1.Size = new System.Drawing.Size(1422, 726);
             this.chuyenDi1.TabIndex = 0;
             // 
             // chiTietChuyenDi1
@@ -310,7 +319,7 @@
             this.chiTietChuyenDi1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.chiTietChuyenDi1.Location = new System.Drawing.Point(3, 733);
             this.chiTietChuyenDi1.Name = "chiTietChuyenDi1";
-            this.chiTietChuyenDi1.Size = new System.Drawing.Size(1447, 726);
+            this.chiTietChuyenDi1.Size = new System.Drawing.Size(1422, 726);
             this.chiTietChuyenDi1.TabIndex = 1;
             // 
             // datChuyenDi1
@@ -319,7 +328,7 @@
             this.datChuyenDi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.datChuyenDi1.Location = new System.Drawing.Point(3, 1465);
             this.datChuyenDi1.Name = "datChuyenDi1";
-            this.datChuyenDi1.Size = new System.Drawing.Size(1463, 726);
+            this.datChuyenDi1.Size = new System.Drawing.Size(1422, 726);
             this.datChuyenDi1.TabIndex = 2;
             // 
             // taoChuyenDiMoi1
@@ -328,7 +337,7 @@
             this.taoChuyenDiMoi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.taoChuyenDiMoi1.Location = new System.Drawing.Point(3, 2197);
             this.taoChuyenDiMoi1.Name = "taoChuyenDiMoi1";
-            this.taoChuyenDiMoi1.Size = new System.Drawing.Size(1442, 726);
+            this.taoChuyenDiMoi1.Size = new System.Drawing.Size(1422, 726);
             this.taoChuyenDiMoi1.TabIndex = 3;
             // 
             // nhieuNguoiDi1
@@ -337,26 +346,16 @@
             this.nhieuNguoiDi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.nhieuNguoiDi1.Location = new System.Drawing.Point(3, 2929);
             this.nhieuNguoiDi1.Name = "nhieuNguoiDi1";
-            this.nhieuNguoiDi1.Size = new System.Drawing.Size(1442, 726);
+            this.nhieuNguoiDi1.Size = new System.Drawing.Size(1422, 726);
             this.nhieuNguoiDi1.TabIndex = 4;
             // 
-            // pbAva
+            // danhGiaChuyenDi1
             // 
-            this.pbAva.BackColor = System.Drawing.Color.White;
-            this.pbAva.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pbAva.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pbAva.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pbAva.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pbAva.BorderSize = 1;
-            this.pbAva.GradientAngle = 50F;
-            this.pbAva.Image = global::TOURZY___Tourism_Management_System.Properties.Resources.ChatGPT_Image_15_58_10_8_thg_4__2025;
-            this.pbAva.Location = new System.Drawing.Point(75, 25);
-            this.pbAva.Margin = new System.Windows.Forms.Padding(4);
-            this.pbAva.Name = "pbAva";
-            this.pbAva.Size = new System.Drawing.Size(128, 128);
-            this.pbAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAva.TabIndex = 9;
-            this.pbAva.TabStop = false;
+            this.danhGiaChuyenDi1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.danhGiaChuyenDi1.Location = new System.Drawing.Point(3, 3661);
+            this.danhGiaChuyenDi1.Name = "danhGiaChuyenDi1";
+            this.danhGiaChuyenDi1.Size = new System.Drawing.Size(1422, 726);
+            this.danhGiaChuyenDi1.TabIndex = 5;
             // 
             // User
             // 
@@ -375,10 +374,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAva)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,12 +398,12 @@
         private System.Windows.Forms.Button btn_X;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label2;
         private ChuyenDi chuyenDi1;
         private ChiTietChuyenDi chiTietChuyenDi1;
         private DatChuyenDi datChuyenDi1;
         private TaoChuyenDiMoi taoChuyenDiMoi1;
         private NhieuNguoiDi nhieuNguoiDi1;
         private DanhGiaChuyenDi danhGiaChuyenDi1;
-        private System.Windows.Forms.Label label2;
     }
 }

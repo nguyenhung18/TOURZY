@@ -40,12 +40,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tb_Gia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_DiemDen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker_KhoiHanh = new System.Windows.Forms.DateTimePicker();
+            this.cbUseDateTime = new System.Windows.Forms.CheckBox();
             panel1 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,7 +86,6 @@
             this.label1.Size = new System.Drawing.Size(1012, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = " CÙNG TOURZY CHỌN ĐIỂM ĐẾN PHÙ HỢP";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_LienHe
             // 
@@ -100,7 +99,6 @@
             this.btn_LienHe.TabIndex = 34;
             this.btn_LienHe.Text = "Liên Hệ";
             this.btn_LienHe.UseVisualStyleBackColor = false;
-            this.btn_LienHe.Click += new System.EventHandler(this.btn_LienHe_Click);
             // 
             // btn_TìmKiem
             // 
@@ -114,6 +112,7 @@
             this.btn_TìmKiem.TabIndex = 33;
             this.btn_TìmKiem.Text = "Tìm Kiếm";
             this.btn_TìmKiem.UseVisualStyleBackColor = false;
+            this.btn_TìmKiem.Click += new System.EventHandler(this.btn_TìmKiem_Click);
             // 
             // btn_ChiTiet
             // 
@@ -127,6 +126,7 @@
             this.btn_ChiTiet.TabIndex = 32;
             this.btn_ChiTiet.Text = "Chi Tiết";
             this.btn_ChiTiet.UseVisualStyleBackColor = false;
+            this.btn_ChiTiet.Click += new System.EventHandler(this.btn_ChiTiet_Click);
             // 
             // dgv_DSChuyenDi
             // 
@@ -160,6 +160,7 @@
             this.nud_Sao.Name = "nud_Sao";
             this.nud_Sao.Size = new System.Drawing.Size(87, 34);
             this.nud_Sao.TabIndex = 29;
+
             // 
             // label6
             // 
@@ -195,16 +196,6 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Giá:";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(845, 228);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -226,7 +217,6 @@
             this.tb_DiemDen.Name = "tb_DiemDen";
             this.tb_DiemDen.Size = new System.Drawing.Size(216, 34);
             this.tb_DiemDen.TabIndex = 22;
-            this.tb_DiemDen.TextChanged += new System.EventHandler(this.tb_DiemDen_TextChanged);
             // 
             // label3
             // 
@@ -263,6 +253,17 @@
             this.dateTimePicker_KhoiHanh.Size = new System.Drawing.Size(228, 34);
             this.dateTimePicker_KhoiHanh.TabIndex = 24;
             // 
+            // cbUseDateTime
+            // 
+            this.cbUseDateTime.AutoSize = true;
+            this.cbUseDateTime.Location = new System.Drawing.Point(845, 228);
+            this.cbUseDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbUseDateTime.Name = "cbUseDateTime";
+            this.cbUseDateTime.Size = new System.Drawing.Size(18, 17);
+            this.cbUseDateTime.TabIndex = 25;
+            this.cbUseDateTime.UseVisualStyleBackColor = true;
+            this.cbUseDateTime.CheckedChanged += new System.EventHandler(this.cbUseDateTime_CheckedChanged);
+            // 
             // ChuyenDi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,7 +281,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tb_Gia);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbUseDateTime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_DiemDen);
             this.Controls.Add(this.label3);
@@ -310,7 +311,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_Gia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tb_DiemDen;
         private System.Windows.Forms.Label label3;
@@ -318,5 +318,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_KhoiHanh;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbUseDateTime;
     }
 }
