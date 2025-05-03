@@ -33,56 +33,83 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SATAUiFramework, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SATAUiFramework.1.1.3\lib\net40\SATAUiFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietChuyenDi.cs">
+    <Compile Include="Form\fForgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fForgot.Designer.cs">
+      <DependentUpon>fForgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\AdminUC\AdminDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ChiTietChuyenDi.Designer.cs">
-      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChuyenDi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ChuyenDi.Designer.cs">
-      <DependentUpon>ChuyenDi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DanhGiaChuyenDi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DanhGiaChuyenDi.Designer.cs">
-      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DatChuyenDi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DatChuyenDi.Designer.cs">
-      <DependentUpon>DatChuyenDi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fUserControl\AdminDashboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="fUserControl\AdminDashboard.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\CustomerManage.cs">
+    <Compile Include="fUserControl\AdminUC\CustomerManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\CustomerManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\CustomerManage.Designer.cs">
       <DependentUpon>CustomerManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Admin.cs">
@@ -103,79 +130,82 @@
     <Compile Include="Form\fSignin.Designer.cs">
       <DependentUpon>fSignin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\GuideManage.cs">
+    <Compile Include="fUserControl\AdminUC\GuideManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\GuideManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\GuideManage.Designer.cs">
       <DependentUpon>GuideManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhieuNguoiDi.cs">
+    <Compile Include="fUserControl\UserUC\ChiTietChuyenDi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NhieuNguoiDi.Designer.cs">
-      <DependentUpon>NhieuNguoiDi.cs</DependentUpon>
+    <Compile Include="fUserControl\UserUC\ChiTietChuyenDi.Designer.cs">
+      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\ChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\ChuyenDi.Designer.cs">
+      <DependentUpon>ChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\DanhGiaChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\DanhGiaChuyenDi.Designer.cs">
+      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\DatChuyenDi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\DatChuyenDi.Designer.cs">
+      <DependentUpon>DatChuyenDi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\TaoChuyenDiMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\TaoChuyenDiMoi.Designer.cs">
+      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\ThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fUserControl\UserUC\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="fUserControl\RequestManage.cs">
+    <Compile Include="fUserControl\AdminUC\RequestManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\RequestManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\RequestManage.Designer.cs">
       <DependentUpon>RequestManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\ScheduleManage.cs">
+    <Compile Include="fUserControl\AdminUC\ScheduleManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\ScheduleManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\ScheduleManage.Designer.cs">
       <DependentUpon>ScheduleManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\RevManage.cs">
+    <Compile Include="fUserControl\AdminUC\RevManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\RevManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\RevManage.Designer.cs">
       <DependentUpon>RevManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\TicketManage.cs">
+    <Compile Include="fUserControl\AdminUC\TourCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\TicketManage.Designer.cs">
-      <DependentUpon>TicketManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fUserControl\TourCustomer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="fUserControl\TourCustomer.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\TourCustomer.Designer.cs">
       <DependentUpon>TourCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUserControl\TourManage.cs">
+    <Compile Include="fUserControl\AdminUC\TourManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fUserControl\TourManage.Designer.cs">
+    <Compile Include="fUserControl\AdminUC\TourManage.Designer.cs">
       <DependentUpon>TourManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaoChuyenDiMoi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TaoChuyenDiMoi.Designer.cs">
-      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ChiTietChuyenDi.resx">
-      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChuyenDi.resx">
-      <DependentUpon>ChuyenDi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhGiaChuyenDi.resx">
-      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DatChuyenDi.resx">
-      <DependentUpon>DatChuyenDi.cs</DependentUpon>
+    <EmbeddedResource Include="Form\fForgot.resx">
+      <DependentUpon>fForgot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
@@ -183,20 +213,38 @@
     <EmbeddedResource Include="Form\fSignin.resx">
       <DependentUpon>fSignin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\AdminDashboard.resx">
+    <EmbeddedResource Include="Form\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\AdminUC\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\CustomerManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\CustomerManage.resx">
       <DependentUpon>CustomerManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\GuideManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\GuideManage.resx">
       <DependentUpon>GuideManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhieuNguoiDi.resx">
-      <DependentUpon>NhieuNguoiDi.cs</DependentUpon>
+    <EmbeddedResource Include="fUserControl\UserUC\ChiTietChuyenDi.resx">
+      <DependentUpon>ChiTietChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\UserUC\ChuyenDi.resx">
+      <DependentUpon>ChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\UserUC\DanhGiaChuyenDi.resx">
+      <DependentUpon>DanhGiaChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\UserUC\DatChuyenDi.resx">
+      <DependentUpon>DatChuyenDi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\UserUC\TaoChuyenDiMoi.resx">
+      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserControl\UserUC\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,29 +256,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="fUserControl\RequestManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\RequestManage.resx">
       <DependentUpon>RequestManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\RevManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\RevManage.resx">
       <DependentUpon>RevManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\ScheduleManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\ScheduleManage.resx">
       <DependentUpon>ScheduleManage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\TicketManage.resx">
-      <DependentUpon>TicketManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\TourCustomer.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\TourCustomer.resx">
       <DependentUpon>TourCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUserControl\TourManage.resx">
+    <EmbeddedResource Include="fUserControl\AdminUC\TourManage.resx">
       <DependentUpon>TourManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TaoChuyenDiMoi.resx">
-      <DependentUpon>TaoChuyenDiMoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User.resx">
-      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -306,6 +345,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ChatGPT Image 15_58_10 8 thg 4, 2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

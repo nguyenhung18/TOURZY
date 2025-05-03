@@ -25,7 +25,7 @@ namespace TOURZY___Tourism_Management_System
             if (menuExpand == false)
             {
                 menuContainer.Height += 10;
-                if (menuContainer.Height >= 262)
+                if (menuContainer.Height >= 198)
                 {
                     menuContainer.Height = 262; // Ép buộc giá trị cuối cùng
                     menuTransaction.Stop();
@@ -51,118 +51,109 @@ namespace TOURZY___Tourism_Management_System
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = true;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
+            adminDashboard2.Visible = true;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
         }
 
         private void btnTour_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = true;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = true;
         }
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = true;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnSche_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = true;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = true;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnGuide_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = true;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = true;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnRev_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = true;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = true;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnCusAcc_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = true;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = true;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnCusTour_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = false;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = true;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = false;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = true;
+            tourManage2.Visible = false;
         }
 
         private void btnReq_Click(object sender, EventArgs e)
         {
-            adminDashboard1.Visible = false;
-            customerManage1.Visible = false;
-            guideManage1.Visible = false;
-            requestManage1.Visible = true;
-            revManage1.Visible = false;
-            scheduleManage1.Visible = false;
-            ticketManage1.Visible = false;
-            tourCustomer1.Visible = false;
-            tourManage1.Visible = false;
+            adminDashboard2.Visible = false;
+            customerManage2.Visible = false;
+            guideManage2.Visible = false;
+            requestManage2.Visible = true;
+            revManage2.Visible = false;
+            scheduleManage2.Visible = false;
+            tourCustomer2.Visible = false;
+            tourManage2.Visible = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

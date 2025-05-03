@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // Thêm thư viện để làm việc với SQL Server
+using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using BussinessLayer;
+using TransferObject;
 
 namespace TOURZY___Tourism_Management_System
 {
     public partial class fLogin : Form
     {
-        public static string username;
-
-        // Chuỗi kết nối đến cơ sở dữ liệu Tourzy (dùng chuỗi bạn cung cấp)
-        private string connectionString = @"Data Source=.;Initial Catalog=Tourzy;Integrated Security=True;";
+        public string username { get; private set; }
+        public int userId { get; private set; }
 
         public fLogin()
         {
@@ -61,19 +61,19 @@ namespace TOURZY___Tourism_Management_System
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             fSignin signin = new fSignin();
-            signin.ShowDialog();
-            this.Show();
+            signin.FormClosed += (s, args) => this.Show();
+            signin.Show();
         }
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string usernameInput = txtUser.Text.Trim();
-            string passwordInput = txtPass.Text.Trim();
+            string tenDangNhap = txtUser.Text.Trim();
+            string matKhau = txtPass.Text.Trim();
 
-            // Kiểm tra xem người dùng đã nhập đầy đủ thông tin chưa
-            if (string.IsNullOrEmpty(usernameInput) || string.IsNullOrEmpty(passwordInput))
+            if (string.IsNullOrEmpty(tenDangNhap) || string.IsNullOrEmpty(matKhau))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -81,43 +81,71 @@ namespace TOURZY___Tourism_Management_System
 
             try
             {
-                // Tạo kết nối đến cơ sở dữ liệu
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                AccountBLL accountBLL = new AccountBLL();
+
+                AccountDTO taiKhoan = accountBLL.DangNhap(tenDangNhap, matKhau);
+
+                if (taiKhoan != null)
                 {
-                    // Mở kết nối
-                    connection.Open();
+                    // Lưu tên đăng nhập vào biến tĩnh
+                    username = tenDangNhap;
 
-                    // Câu truy vấn SQL để kiểm tra thông tin đăng nhập
-                    string query = "SELECT COUNT(*) FROM TAIKHOAN WHERE TENDANGNHAP = @username AND MATKHAU = @password";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (taiKhoan.VaiTro == "admin")
                     {
-                        // Thêm tham số để tránh SQL Injection
-                        command.Parameters.AddWithValue("@username", usernameInput);
-                        command.Parameters.AddWithValue("@password", passwordInput);
-
-                        // Thực thi truy vấn và lấy kết quả
-                        int count = (int)command.ExecuteScalar();
-
-                        if (count > 0)
-                        {
-                            // Đăng nhập thành công
-                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            fLogin.username = usernameInput; // Lưu tên đăng nhập vào biến static
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                        else
-                        {
-                            // Đăng nhập thất bại
-                            MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        this.Hide();
+                        Admin adminForm = new Admin();
+                        adminForm.StartPosition = FormStartPosition.CenterScreen;
+                        adminForm.ShowDialog();
+                        this.Show();
                     }
+                    else
+                    {
+                        username = taiKhoan.TenDangNhap;
+                        userId = taiKhoan.ID; // Lưu ID
+
+                        // Mở form User và truyền username, userId
+                        User userForm = new User();
+                        userForm.SetUserInfo(tenDangNhap, userId); // Gọi phương thức để truyền dữ liệu
+                        this.Hide(); // Ẩn fLogin (thay vì đóng fLogin)
+                        userForm.ShowDialog(); // Hiển thị User
+                        this.Show(); // Hiển thị lại fLogin sau khi User form đóng
+
+                    }
+
+
+                    // Hiển thị lại form đăng nhập sau khi đóng form Admin/User
+                    this.Show();
+                    txtUser.Clear();
+                    txtPass.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPass.Clear();
+                    txtPass.Focus();
                 }
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi nếu có vấn đề khi kết nối hoặc truy vấn cơ sở dữ liệu
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void llbQuenMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            fForgot fForgot = new fForgot();
+            fForgot.ShowDialog();
+            this.Show();
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
             }
         }
     }
