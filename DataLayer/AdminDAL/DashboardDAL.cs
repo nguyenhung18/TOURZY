@@ -47,7 +47,7 @@ namespace DataLayer
                             FROM DanhSachDangKy dsdk 
                             JOIN ChuyenDi cd ON dsdk.MaChuyenDi = cd.MaChuyenDi
                             WHERE CAST(dsdk.NgayBatDau AS DATE) = CAST(GETDATE() AS DATE)
-                            AND dsdk.TrangThai = N'Đã thanh toán'";
+                            AND dsdk.TrangThai = N'Đã xác nhận'";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
                     object result = cmd.ExecuteScalar();
@@ -77,7 +77,7 @@ namespace DataLayer
                             JOIN ChuyenDi cd ON dsdk.MaChuyenDi = cd.MaChuyenDi
                             WHERE MONTH(dsdk.NgayBatDau) = MONTH(GETDATE())
                             AND YEAR(dsdk.NgayBatDau) = YEAR(GETDATE())
-                            AND dsdk.TrangThai = N'Đã thanh toán'";
+                            AND dsdk.TrangThai = N'Đã xác nhận'";
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
                     object result = cmd.ExecuteScalar();

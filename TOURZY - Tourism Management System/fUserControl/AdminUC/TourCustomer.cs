@@ -171,7 +171,6 @@ namespace TOURZY___Tourism_Management_System
 
             List<DSDuKhachDTO> filteredData = bll.GetFilteredCustomer(att1, att2, att3, att4, ma, date, cccd, ten);
 
-            // Hiển thị kết quả lên DataGridView
             dgv_hanhkhach.DataSource = filteredData;
         }
 
@@ -197,11 +196,11 @@ namespace TOURZY___Tourism_Management_System
             {
                 var selectedCus = dgv_hanhkhach.Rows[e.RowIndex];
 
-                this.tb_id.Text = selectedCus.Cells[0].Value?.ToString(); // MaChuyenDi
-                this.dtp_ngaydi.Value = Convert.ToDateTime(selectedCus.Cells[1].Value); // NgayBatDau
-                this.tb_cccd.Text = selectedCus.Cells[2].Value?.ToString(); // CCCD
-                this.tb_ten.Text = selectedCus.Cells[3].Value?.ToString(); // Ten
-                this.tb_sdt.Text = selectedCus.Cells[4].Value?.ToString(); // SDT
+                this.tb_id.Text = selectedCus.Cells[0].Value?.ToString();
+                this.dtp_ngaydi.Value = Convert.ToDateTime(selectedCus.Cells[1].Value); 
+                this.tb_cccd.Text = selectedCus.Cells[2].Value?.ToString();
+                this.tb_ten.Text = selectedCus.Cells[3].Value?.ToString();
+                this.tb_sdt.Text = selectedCus.Cells[4].Value?.ToString();
             }
         }
 

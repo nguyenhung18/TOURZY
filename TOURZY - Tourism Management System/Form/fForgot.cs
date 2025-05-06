@@ -42,14 +42,12 @@ namespace TOURZY___Tourism_Management_System
                 return;
             }
 
-            // Kiểm tra tài khoản và email có tồn tại không
             if (!accountBLL.KiemTra(username, email))
             {
                 MessageBox.Show("Tên đăng nhập hoặc Email không chính xác, thử lại nhé!");
                 return;
             }
 
-            // Tạo OTP và cập nhật vào cơ sở dữ liệu
             string otp = accountBLL.GenerateOTP();
             accountBLL.UpdateOTP(username, otp);
 

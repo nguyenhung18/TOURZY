@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using BussinessLayer;
 using TransferObject;
+using System.Configuration;
 
 namespace TOURZY___Tourism_Management_System
 {
@@ -43,6 +44,11 @@ namespace TOURZY___Tourism_Management_System
         private void btn_send_Click(object sender, EventArgs e)
         {
             string email = bll.GetEmail(bll.GetIDAccount(cbb_idacc.Text));
+            string fromEmail = ConfigurationManager.AppSettings["MailAddress"];
+            string displayName = ConfigurationManager.AppSettings["MailDisplayName"];
+            string password = ConfigurationManager.AppSettings["MailPassword"];
+            string smtpHost = ConfigurationManager.AppSettings["SmtpHost"];
+            int smtpPort = int.Parse(ConfigurationManager.AppSettings["SmtpPort"]);
 
             // Kiểm tra email hợp lệ
             if (string.IsNullOrEmpty(email) || !IsValidEmail(email))
@@ -62,26 +68,35 @@ namespace TOURZY___Tourism_Management_System
             {
                 SmtpClient smtpClient = new SmtpClient
                 {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
+                    Host = smtpHost,
+                    Port = smtpPort,
                     EnableSsl = true,
-                    Credentials = new NetworkCredential("vut462733@gmail.com", "rdjk ilny yyla byxy")
+                    Credentials = new NetworkCredential(fromEmail, password)
                 };
 
                 MailMessage mailMessage = new MailMessage
                 {
-                    From = new MailAddress("vut462733@gmail.com"),
+                    From = new MailAddress(fromEmail, displayName),
                     Subject = tb_tieude.Text,
                     Body = tb_noidung.Text
                 };
                 mailMessage.To.Add(new MailAddress(email));
 
                 smtpClient.Send(mailMessage);
-                MessageBox.Show("Gửi thành công.", "Thông báo");
+                MessageBox.Show("Gửi email thành công.", "Thông báo");
+
+                // Reset form sau khi gửi
+                tb_tieude.Clear();
+                tb_noidung.Clear();
+                cbb_idacc.SelectedIndex = 0;
+            }
+            catch (SmtpException ex)
+            {
+                MessageBox.Show("Lỗi gửi mail: " + ex.Message, "Lỗi");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Gửi thất bại... " + ex.Message, "Thông báo");
+                MessageBox.Show("Gửi thất bại: " + ex.Message, "Lỗi");
             }
         }
 
@@ -144,10 +159,8 @@ namespace TOURZY___Tourism_Management_System
         {
             if (dgv_yeucau.CurrentRow != null)
             {
-                // Lấy dòng được chọn
                 DataGridViewRow selectedRow = dgv_yeucau.CurrentRow;
 
-                // Kiểm tra nếu dòng đã chọn có dữ liệu hợp lệ
                 if (selectedRow.Cells["MaTaiKhoan"].Value != null &&
                     selectedRow.Cells["MaChuyenDi"].Value != null &&
                     selectedRow.Cells["NgayBatDau"].Value != null)

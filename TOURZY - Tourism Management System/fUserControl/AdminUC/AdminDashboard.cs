@@ -71,7 +71,7 @@ namespace TOURZY___Tourism_Management_System
                         weather_data.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
                         weather_data.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                         break;
-                    case "Trung bình":
+                    case "Bình thường":
                         weather_data.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
                         weather_data.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
                         break;
@@ -93,11 +93,6 @@ namespace TOURZY___Tourism_Management_System
             {
                 weather_data.Rows.Clear();
                 var thoiTietList = weatherBll.LayTatCaThoiTiet();
-                if (thoiTietList == null || !thoiTietList.Any())
-                {
-                    MessageBox.Show("Không có dữ liệu thời tiết để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
                 foreach (var tt in thoiTietList)
                 {
                     weather_data.Rows.Add(tt.MaChuyenDi, tt.Ngay.ToString("yyyy-MM-dd"), tt.DiaDiem, tt.DuBao, tt.TrangThai);

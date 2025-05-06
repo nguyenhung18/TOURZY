@@ -157,29 +157,20 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
-        -- Xóa các bản ghi trong bảng DanhSachDangKy (Danh sách đăng ký)
         DELETE FROM DanhSachDangKy WHERE MaChuyenDi = @MaChuyenDi;
 
-        -- Xóa các bản ghi trong bảng LichTrinh (Lịch trình)
         DELETE FROM LichTrinh WHERE MaChuyenDi = @MaChuyenDi;
 
-        -- Xóa các bản ghi trong bảng DanhSachDuKhach (Danh sách du khách)
         DELETE FROM DanhSachDuKhach WHERE MaChuyenDi = @MaChuyenDi;
 
-        -- Xóa các đánh giá trong bảng DanhGia
         DELETE FROM DanhGia WHERE MaChuyenDi = @MaChuyenDi;
 
-        -- Xóa bản ghi trong bảng ChuyenDi (Tour chính)
         DELETE FROM ChuyenDi WHERE MaChuyenDi = @MaChuyenDi;
 
-        -- Commit transaction nếu không có lỗi
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
-        -- Rollback transaction nếu có lỗi
         ROLLBACK TRANSACTION;
-
-        -- Hiển thị thông báo lỗi
         PRINT 'Error: ' + ERROR_MESSAGE();
     END CATCH;
 END

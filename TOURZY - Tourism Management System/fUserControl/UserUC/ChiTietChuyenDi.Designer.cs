@@ -119,7 +119,7 @@
             this.lb_GiaTrenNguoi.BackColor = System.Drawing.SystemColors.Window;
             this.lb_GiaTrenNguoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_GiaTrenNguoi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lb_GiaTrenNguoi.Location = new System.Drawing.Point(565, 220);
+            this.lb_GiaTrenNguoi.Location = new System.Drawing.Point(671, 224);
             this.lb_GiaTrenNguoi.Name = "lb_GiaTrenNguoi";
             this.lb_GiaTrenNguoi.Size = new System.Drawing.Size(126, 27);
             this.lb_GiaTrenNguoi.TabIndex = 57;
@@ -131,7 +131,7 @@
             this.lb_Ten.BackColor = System.Drawing.SystemColors.Window;
             this.lb_Ten.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Ten.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lb_Ten.Location = new System.Drawing.Point(135, 216);
+            this.lb_Ten.Location = new System.Drawing.Point(108, 217);
             this.lb_Ten.Name = "lb_Ten";
             this.lb_Ten.Size = new System.Drawing.Size(70, 27);
             this.lb_Ten.TabIndex = 55;
@@ -194,7 +194,7 @@
             this.lb_NguoiThamGia.BackColor = System.Drawing.SystemColors.Window;
             this.lb_NguoiThamGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NguoiThamGia.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lb_NguoiThamGia.Location = new System.Drawing.Point(1018, 224);
+            this.lb_NguoiThamGia.Location = new System.Drawing.Point(1109, 229);
             this.lb_NguoiThamGia.Name = "lb_NguoiThamGia";
             this.lb_NguoiThamGia.Size = new System.Drawing.Size(97, 27);
             this.lb_NguoiThamGia.TabIndex = 58;
@@ -251,7 +251,7 @@
             this.lb_HanhTrinh.BackColor = System.Drawing.SystemColors.Window;
             this.lb_HanhTrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_HanhTrinh.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lb_HanhTrinh.Location = new System.Drawing.Point(181, 305);
+            this.lb_HanhTrinh.Location = new System.Drawing.Point(209, 310);
             this.lb_HanhTrinh.Name = "lb_HanhTrinh";
             this.lb_HanhTrinh.Size = new System.Drawing.Size(142, 27);
             this.lb_HanhTrinh.TabIndex = 53;
@@ -347,7 +347,7 @@
             this.label7.BackColor = System.Drawing.SystemColors.Window;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
-            this.label7.Location = new System.Drawing.Point(798, 220);
+            this.label7.Location = new System.Drawing.Point(877, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(209, 32);
             this.label7.TabIndex = 43;
@@ -371,7 +371,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.Window;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
-            this.label5.Location = new System.Drawing.Point(374, 216);
+            this.label5.Location = new System.Drawing.Point(479, 219);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 32);
             this.label5.TabIndex = 41;
@@ -395,7 +395,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(170)))));
-            this.label3.Location = new System.Drawing.Point(4, 301);
+            this.label3.Location = new System.Drawing.Point(37, 309);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 32);
             this.label3.TabIndex = 39;
@@ -445,7 +445,7 @@
             this.Controls.Add(panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ChiTietChuyenDi";
-            this.Size = new System.Drawing.Size(1600, 1092);
+            this.Size = new System.Drawing.Size(1599, 927);
             panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

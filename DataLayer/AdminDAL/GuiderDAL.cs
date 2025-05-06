@@ -116,7 +116,7 @@ namespace DataLayer
                 var result = cmd.ExecuteScalar();
                 if (result != null)
                 {
-                    string lastMa = result.ToString(); // VD: "HDV007"
+                    string lastMa = result.ToString();
                     int so = int.Parse(lastMa.Substring(3)) + 1;
                     maHDV = "HDV" + so.ToString("D3");
                 }

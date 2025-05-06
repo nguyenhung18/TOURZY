@@ -13,7 +13,7 @@ namespace DataLayer
     {
         private string connectionString = @"Data Source=.;Initial Catalog=TOURZY;Integrated Security=True";
 
-       public List<ChuyenDiDTO> FindTour(string diemDen, int giaToiThieu, DateTime? ngayKhoiHanh = null, int? soSao = null)
+        public List<ChuyenDiDTO> FindTour(string diemDen, int giaToiThieu, DateTime? ngayKhoiHanh = null, int? soSao = null)
         {
             List<ChuyenDiDTO> result = new List<ChuyenDiDTO>();
 
@@ -92,6 +92,24 @@ namespace DataLayer
 
             return result;
         }
+        public List<string> GetAllTenChuyenDi()
+        {
+            List<string> danhSachTen = new List<string>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT TenChuyenDi FROM ChuyenDi";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    danhSachTen.Add(reader.GetString(0));
+                }
+            }
+
+            return danhSachTen;
+        }
         public string GetMaChuyenDiByTen(string tenChuyenDi)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -103,6 +121,34 @@ namespace DataLayer
                 conn.Open();
                 object result = cmd.ExecuteScalar();
                 return result?.ToString() ?? throw new Exception("Chuyến đi không tồn tại");
+            }
+        }
+        public DateTime GetNgayBatDauByMaChuyenDi(string maChuyenDi)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT TOP 1 NgayBatDau FROM LichTrinh WHERE MaChuyenDi = @MaChuyenDi ORDER BY NgayBatDau DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaChuyenDi", maChuyenDi);
+                        conn.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            return Convert.ToDateTime(result);
+                        }
+                        else
+                        {
+                            throw new Exception("Không tìm thấy lịch trình cho chuyến đi này.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy ngày bắt đầu: " + ex.Message);
             }
         }
     }

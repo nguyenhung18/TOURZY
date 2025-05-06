@@ -32,10 +32,10 @@ namespace TOURZY___Tourism_Management_System
             lb_LoaiHinh.Text = loaiHinh;
             lb_NgayKhoiHanh.Text = ngay;
             lb_SoNgayDi.Text = soNgay;
-       
+
         }
 
-      
+
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
 
@@ -104,7 +104,7 @@ namespace TOURZY___Tourism_Management_System
                     MessageBox.Show("Số điện thoại phải là 10 số!", "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-             
+
 
                 if (soLuong > maxSoLuong)
                 {
@@ -143,24 +143,24 @@ namespace TOURZY___Tourism_Management_System
 
                 // Save to ThongTinCaNhan using MaTaiKhoan
                 string errorMessage;
-                if (!thongTinCaNhanBL.SaveThongTinCaNhan(maTaiKhoan, hoVaTen, sdt, email,diaChi, out errorMessage))
+                if (!thongTinCaNhanBL.SaveThongTinCaNhan(maTaiKhoan, hoVaTen, sdt, email, diaChi, out errorMessage))
                 {
                     MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            
-             else
-                {
-                MessageBox.Show("Đã lưu thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
 
-            // Save to DanhSachDuKhach using MaChuyenDi
-            if (!danhSachDuKhachBL.SaveDanhSachDuKhach(maChuyenDi, ngayBatDau, cccd, hoVaTen, sdt, out errorMessage))
+                else
+                {
+                    MessageBox.Show("Đã lưu thông tin thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Save to DanhSachDuKhach using MaChuyenDi
+                if (!danhSachDuKhachBL.SaveDanhSachDuKhach(maChuyenDi, ngayBatDau, cccd, hoVaTen, sdt, out errorMessage))
                 {
                     MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
+
                 // Calculate total cost
                 int tongSoTien = soLuong * pricePerPerson;
 
@@ -196,26 +196,6 @@ namespace TOURZY___Tourism_Management_System
             tb_SoLuongNguoi.ResetText();
             tb_Email.ResetText();
             tb_DiaChi.ResetText();
-        }
-
-        private void btn_Dien_Click(object sender, EventArgs e)
-        {
-
-            User userForm = this.FindForm() as User;
-            if (userForm != null)
-            {
-                // Tìm flowLayoutPanel1 chứa các UserControl
-                FlowLayoutPanel flowPanel = userForm.Controls.Find("flowLayoutPanel1", true).FirstOrDefault() as FlowLayoutPanel;
-                if (flowPanel != null)
-                {
-                    flowPanel.Controls.Clear(); // Xóa UserControl hiện tại
-
-                    // Tạo và thêm lại UserControl đích (ví dụ: UserControl_TrangChu)
-                   ChuyenDi  ucTrangChu = new ChuyenDi();
-                    ucTrangChu.Dock = DockStyle.Top; // Hoặc Fill nếu bạn muốn
-                    flowPanel.Controls.Add(ucTrangChu);
-                }
-            }
         }
     }
 }

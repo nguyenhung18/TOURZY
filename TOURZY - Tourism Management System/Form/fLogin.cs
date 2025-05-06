@@ -103,19 +103,15 @@ namespace TOURZY___Tourism_Management_System
                     else
                     {
                         username = taiKhoan.TenDangNhap;
-                        userId = taiKhoan.ID; // Lưu ID
+                        userId = taiKhoan.ID; 
 
-                        // Mở form User và truyền username, userId
                         User userForm = new User();
-                        userForm.SetUserInfo(tenDangNhap, userId); // Gọi phương thức để truyền dữ liệu
-                        this.Hide(); // Ẩn fLogin (thay vì đóng fLogin)
-                        userForm.ShowDialog(); // Hiển thị User
-                        this.Show(); // Hiển thị lại fLogin sau khi User form đóng
+                        userForm.SetUserInfo(tenDangNhap, userId);
+                        this.Hide();
+                        userForm.ShowDialog();
+                        this.Show();
 
                     }
-
-
-                    // Hiển thị lại form đăng nhập sau khi đóng form Admin/User
                     this.Show();
                     txtUser.Clear();
                     txtPass.Clear();

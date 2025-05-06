@@ -101,6 +101,7 @@ namespace TOURZY___Tourism_Management_System
 
         private void btn__DanhGia_Click(object sender, EventArgs e)
         {
+
             // Get MaChuyenDi from the selected row in DataGridView
             if (dgv_CacDanhGia.SelectedRows.Count == 0)
             {
@@ -132,37 +133,32 @@ namespace TOURZY___Tourism_Management_System
                 MessageBox.Show("Vui lòng nhập nhận xét!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (bus.DanhGiaDaTonTai(maChuyenDi, maTaiKhoan))
+            {
+                MessageBox.Show("Bạn đã đánh giá chuyến đi này rồi!");
+                return;
+            }
 
-            // Create a new DanhGiaDTO object
-            DanhGiaDTO newDanhGia = new DanhGiaDTO
+            DanhGiaDTO danhGia = new DanhGiaDTO
             {
                 MaChuyenDi = maChuyenDi,
-                MaTaiKhoan = maTaiKhoan, // Hardcoded for now
+                MaTaiKhoan = maTaiKhoan,
                 Sao = sao,
                 BinhLuan = binhLuan
             };
-
-            try
+            bool thanhCong = bus.ThemDanhGia(danhGia);
+            if (thanhCong)
             {
-                bool result = bus.AddDanhGia(newDanhGia);
-                if (result)
-                {
-                    MessageBox.Show("Thêm đánh giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDanhSach(); // Refresh the DataGridView with the current filter
-                    rtb_NhanXet.Clear(); // Clear the comment field
-                    tb_SoSao.Clear(); // Clear the rating field
-                }
-                else
-                {
-                    MessageBox.Show("Thêm đánh giá thất bại! Kiểm tra xem mã chuyến đi có tồn tại không.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Đánh giá của bạn đã được gửi thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDanhSach(); // Cập nhật lại danh sách đánh giá
+                tb_SoSao.Text = "";
+                rtb_NhanXet.Text = "";
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Lỗi khi thêm đánh giá: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xảy ra khi gửi đánh giá!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgv_CacDanhGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // đảm bảo không click vào header

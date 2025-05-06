@@ -13,24 +13,52 @@ namespace DataLayer
     {
         private string connectionString = @"Data Source=.;Initial Catalog=TOURZY;Integrated Security=True";
 
-        public bool ThemYeuCau(TaoChuyenDiMoiDTO yc)
+        public bool SaveYeuCau(TaoChuyenDiMoiDTO dto, out string error)
         {
-            string query = "INSERT INTO YeuCau (TenNguoiGui, TenChuyenDi, NgayBatDau, SoLuong) VALUES (@TenNguoiGui, @TenChuyenDi, @NgayBatDau, @SoLuong)";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            try
             {
-                cmd.Parameters.AddWithValue("@TenNguoiGui", yc.TenNguoiGui);
-                cmd.Parameters.AddWithValue("@TenChuyenDi", yc.TenChuyenDi);
-                cmd.Parameters.AddWithValue("@NgayBatDau", yc.NgayBatDau);
-                cmd.Parameters.AddWithValue("@SoLuong", yc.SoLuong);
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"INSERT INTO YeuCau (MaTaiKhoan, MaChuyenDi, NgayBatDau, SoLuong) 
+                                 VALUES (@MaTaiKhoan, @MaChuyenDi, @NgayBatDau, @SoLuong)";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@MaTaiKhoan", dto.MaTaiKhoan);
+                    cmd.Parameters.AddWithValue("@MaChuyenDi", dto.MaChuyenDi);
+                    cmd.Parameters.AddWithValue("@NgayBatDau", dto.NgayBatDau);
+                    cmd.Parameters.AddWithValue("@SoLuong", dto.SoLuong);
 
-                conn.Open();
-                int result = cmd.ExecuteNonQuery();
-                return result > 0;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    error = "";
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
             }
         }
+        public bool KiemTraYeuCauTonTai(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"
+     SELECT COUNT(*) FROM YEUCAU
+     WHERE MaTaiKhoan = @MaTaiKhoan
+       AND MaChuyenDi = @MaChuyenDi
+       AND CAST(NgayBatDau AS DATE) = @NgayBatDau";
 
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
+                    cmd.Parameters.AddWithValue("@MaChuyenDi", maChuyenDi);
+                    cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau.Date); // bỏ phần giờ
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
     }
 }
-

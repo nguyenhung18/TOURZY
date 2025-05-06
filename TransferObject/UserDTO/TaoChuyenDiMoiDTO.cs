@@ -8,9 +8,17 @@ namespace TransferObject
 {
  public class TaoChuyenDiMoiDTO
     {
-        public string TenNguoiGui { get; set; }
-        public string TenChuyenDi { get; set; }
+        public int MaTaiKhoan { get; set; }
+        public string MaChuyenDi { get; set; }
         public DateTime NgayBatDau { get; set; }
         public int SoLuong { get; set; }
+
+        public TaoChuyenDiMoiDTO(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
+        {
+            MaTaiKhoan = maTaiKhoan;
+            MaChuyenDi = maChuyenDi;
+            NgayBatDau = ngayBatDau;
+            SoLuong = soLuong;
+        }
     }
 }

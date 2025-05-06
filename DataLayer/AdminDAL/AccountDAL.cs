@@ -15,27 +15,6 @@ namespace DataLayer
     public class AccountDAL
     {
         private const string connectionString = "Data Source=.;Initial Catalog=TOURZY;Integrated Security=True";
-
-        public int GetMaTaiKhoanByUsername(string username)
-        {
-            int maTaiKhoan = -1;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand("sp_GetID", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@TenDangNhap", username);
-
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    maTaiKhoan = Convert.ToInt32(reader["MaTaiKhoan"]);
-                }
-                conn.Close();
-            }
-            return maTaiKhoan;
-        }
-
         public AccountDTO DangNhap(string tenDangNhap, string matKhau)
         {
             AccountDTO taiKhoan = null;
@@ -104,7 +83,7 @@ namespace DataLayer
                         command.Parameters.AddWithValue("@VaiTro", newAccount.VaiTro);
                         command.Parameters.AddWithValue("@IsDeleted", newAccount.IsDeleted);
 
-                        int result = command.ExecuteNonQuery(); // Nếu thành công thì trả về số dòng ảnh hưởng
+                        int result = command.ExecuteNonQuery();
                         return result > 0;
                     }
                 }
@@ -164,19 +143,17 @@ namespace DataLayer
                             string resetOTP = reader["ResetOTP"].ToString();
                             DateTime otpExpiry = Convert.ToDateTime(reader["OTPExpiry"]);
 
-                            // Kiểm tra OTP và thời gian hết hạn
                             if (resetOTP == otpInput && otpExpiry > DateTime.Now)
                             {
-                                return true; // OTP đúng và chưa hết hạn
+                                return true; 
                             }
                         }
                     }
                 }
             }
-            return false; // OTP không đúng hoặc đã hết hạn
+            return false;
         }
 
-        // Lấy mật khẩu từ cơ sở dữ liệu
         public string LayMatKhau(string username)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))

@@ -15,9 +15,19 @@ namespace BussinessLayer
         {
             return chuyenDiDL.FindTour(diemDen, giaToiThieu, ngayKhoiHanh, soSao);
         }
-        public string  GetMaChuyenDiByTen(string tenChuyenDi)
+        public List<string> LayDanhSachTenChuyenDi()
+        {
+            return chuyenDiDL.GetAllTenChuyenDi();
+        }
+        public string GetMaChuyenDiByTen(string tenChuyenDi)
         {
             return chuyenDiDL.GetMaChuyenDiByTen(tenChuyenDi);
+        }
+        public DateTime GetNgayBatDauByMaChuyenDi(string maChuyenDi)
+        {
+
+            return chuyenDiDL.GetNgayBatDauByMaChuyenDi(maChuyenDi);
+
         }
     }
 }

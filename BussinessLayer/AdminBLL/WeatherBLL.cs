@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 public class WeatherBLL
 {
     WeatherDAL dal = new WeatherDAL();
-    private readonly string apiKey = "b486e0d8ae38d1128743b2831f1d7a76";
+    private readonly string apiKey = "e179c3ce4ad9b85da0ed8d7d2178167e";
 
     public void LuuThoiTietTuAPI(WeatherDTO dto)
     {
@@ -123,7 +123,7 @@ public class WeatherBLL
                  description.Contains("overcast") ||
                  description.Contains("shower rain"))
         {
-            return "Trung bình";
+            return "Bình thường";
         }
         else if (description.Contains("clear") ||
                  description.Contains("sunny"))

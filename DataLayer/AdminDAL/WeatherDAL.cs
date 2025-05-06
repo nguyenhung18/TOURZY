@@ -64,24 +64,6 @@ namespace DataLayer
             return list;
         }
 
-        public string GetTenChuyenDiFromMaChuyenDi(string maChuyenDi)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string query = "SELECT TenChuyenDi FROM ChuyenDi WHERE MaChuyenDi = @MaChuyenDi";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaChuyenDi", maChuyenDi);
-                    conn.Open();
-                    return cmd.ExecuteScalar()?.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                return "Khôn tìm thấy!";
-            }
-        }
 
         public List<TourDTO> LayTatCaChuyenDi()
         {

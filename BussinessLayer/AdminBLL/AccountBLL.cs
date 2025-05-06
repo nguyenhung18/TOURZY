@@ -12,11 +12,6 @@ namespace BussinessLayer
     {
         private AccountDAL taiKhoanDAL = new AccountDAL();
 
-        public int LayMaTaiKhoan(string username)
-        {
-            return taiKhoanDAL.GetMaTaiKhoanByUsername(username);
-        }
-
         public AccountDTO DangNhap(string tenDangNhap, string matKhau)
         {
             return taiKhoanDAL.DangNhap(tenDangNhap, matKhau);

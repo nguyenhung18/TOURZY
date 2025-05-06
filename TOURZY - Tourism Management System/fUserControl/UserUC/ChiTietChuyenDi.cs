@@ -52,7 +52,6 @@ namespace TOURZY___Tourism_Management_System
             LoadAnh();
 
             this.Refresh();
-
         }
 
         private void LoadAnh()

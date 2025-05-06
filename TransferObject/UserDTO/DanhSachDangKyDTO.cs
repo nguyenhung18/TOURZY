@@ -12,6 +12,6 @@ namespace TransferObject
         public string MaChuyenDi { get; set; }
         public DateTime NgayBatDau { get; set; }
         public int SoLuong { get; set; }
-        public string TrangThai { get; set; } = "Đã đăng ký"; // mặc định
+        public string TrangThai { get; set; } = "Đã xác nhận"; // mặc định
     }
 }

@@ -4,38 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
+using TransferObject;
 
 namespace BussinessLayer
 {
     public class DanhSachDangKyBL
     {
-        private readonly DanhSachDangKyDL danhSachDangKyDL;
-        public DanhSachDangKyBL()
-        {
-            danhSachDangKyDL = new DanhSachDangKyDL();
-        }
+        private readonly DanhSachDangKyDL danhSachDangKyDL = new DanhSachDangKyDL();
 
-        public void SaveDanhSachDangKy(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong)
+        public bool SaveDanhSachDangKy(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, string trangThai, out string errorMessage)
         {
-            // Kiểm tra dữ liệu đầu vào
-            if (maTaiKhoan <= 0)
-                throw new ArgumentException("Mã tài khoản không hợp lệ.");
-            if (string.IsNullOrEmpty(maChuyenDi))
-                throw new ArgumentException("Mã chuyến đi không được để trống.");
-            if (ngayBatDau < DateTime.Now)
-                throw new ArgumentException("Ngày bắt đầu không thể nhỏ hơn ngày hiện tại.");
-            if (soLuong <= 0)
-                throw new ArgumentException("Số lượng phải lớn hơn 0.");
+            errorMessage = string.Empty;
 
-            // Gọi phương thức lưu từ tầng DAL
             try
             {
-                danhSachDangKyDL.SaveDanhSachDangKy(maTaiKhoan, maChuyenDi, ngayBatDau, soLuong);
+                if (!danhSachDangKyDL.CheckLichTrinhTonTai(maChuyenDi, ngayBatDau))
+                {
+                    errorMessage = "Không tồn tại lịch trình với mã chuyến đi và ngày bắt đầu này!";
+                    return false;
+                }
+
+                return danhSachDangKyDL.SaveDanhSachDangKy(maTaiKhoan, maChuyenDi, ngayBatDau, soLuong, trangThai);
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi lưu danh sách đăng ký: " + ex.Message);
+                errorMessage = "Lỗi khi thêm vào danh sách đăng ký: " + ex.Message;
+                return false;
             }
         }
+        public bool KiemTraDaDangKy(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
+        {
+            return danhSachDangKyDL.KiemTraTonTai(maTaiKhoan, maChuyenDi, ngayBatDau);
+        }
+
     }
 }
+

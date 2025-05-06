@@ -16,14 +16,13 @@ namespace BussinessLayer
         {
             return dal.GetAllDanhGia();
         }
-        public List<DanhGiaDTO> GetDanhGiaByChuyenDi(string maChuyenDi)
+        public bool ThemDanhGia(DanhGiaDTO danhGia)
         {
-            return dal.GetDanhGiaByChuyenDi(maChuyenDi);
+            return dal.ThemDanhGia(danhGia);
         }
-
-        public bool AddDanhGia(DanhGiaDTO danhGia)
+        public bool DanhGiaDaTonTai(string maChuyenDi, int maTaiKhoan)
         {
-            return dal.AddDanhGia(danhGia);
+            return dal.DanhGiaDaTonTai(maChuyenDi, maTaiKhoan);
         }
     }
 }

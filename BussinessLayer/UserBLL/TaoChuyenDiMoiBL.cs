@@ -10,13 +10,15 @@ namespace BussinessLayer
     public class TaoChuyenDiMoiBL
     {
         private TaoChuyenDiMoiDL dal = new TaoChuyenDiMoiDL();
-
-        public bool GuiYeuCau(TaoChuyenDiMoiDTO yc)
+        private TaoChuyenDiMoiDL taoChuyenDiDL = new TaoChuyenDiMoiDL();
+        public bool TaoYeuCau(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau, int soLuong, out string error)
         {
-            // Có thể thêm kiểm tra hợp lệ dữ liệu ở đây
-            return dal.ThemYeuCau(yc);
+            TaoChuyenDiMoiDTO dto = new TaoChuyenDiMoiDTO(maTaiKhoan, maChuyenDi, ngayBatDau, soLuong);
+            return dal.SaveYeuCau(dto, out error);
+        }
+        public bool KiemTraYeuCauTonTai(int maTaiKhoan, string maChuyenDi, DateTime ngayBatDau)
+        {
+            return taoChuyenDiDL.KiemTraYeuCauTonTai(maTaiKhoan, maChuyenDi, ngayBatDau);
         }
     }
 }
-
-
